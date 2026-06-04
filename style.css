@@ -1,0 +1,280 @@
+:root {
+  --bg: #f7f3ec;
+  --text: #1f2933;
+  --muted: #667085;
+  --card: rgba(255, 255, 255, 0.72);
+  --border: rgba(31, 41, 51, 0.12);
+  --primary: #1f2933;
+  --primary-text: #ffffff;
+  --secondary: rgba(31, 41, 51, 0.08);
+  --shadow: 0 24px 80px rgba(31, 41, 51, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    "Noto Sans SC",
+    "Microsoft YaHei",
+    "PingFang SC",
+    sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 36%),
+    linear-gradient(135deg, #f7f3ec 0%, #eef2f3 100%);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(18px);
+  background: rgba(247, 243, 236, 0.72);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 14px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+}
+
+.hero {
+  min-height: 68vh;
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.05;
+  letter-spacing: -0.06em;
+}
+
+.subtitle {
+  margin-top: 24px;
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.hero-actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid var(--border);
+}
+
+.button.primary {
+  background: var(--primary);
+  color: var(--primary-text);
+}
+
+.button.secondary {
+  background: var(--secondary);
+}
+
+.hero-card,
+.info-card,
+.project-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+  padding: 28px;
+}
+
+.card-title {
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.hero-card ul {
+  padding-left: 20px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.section {
+  padding: 64px 0 0;
+}
+
+.section h2 {
+  margin: 0 0 18px;
+  font-size: 32px;
+  letter-spacing: -0.04em;
+}
+
+.section > p {
+  max-width: 760px;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.info-card {
+  padding: 22px;
+}
+
+.info-card h3,
+.project-item h3 {
+  margin: 0 0 10px;
+}
+
+.info-card p,
+.project-item p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.project-list {
+  display: grid;
+  gap: 16px;
+}
+
+.project-item {
+  padding: 24px;
+}
+
+.tag {
+  display: inline-flex;
+  margin-top: 16px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--secondary);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.contact-section a {
+  font-weight: 700;
+}
+
+.small {
+  font-size: 14px;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 24px;
+  text-align: center;
+  color: var(--muted);
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 40px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 560px) {
+  main {
+    padding: 32px 18px 56px;
+  }
+
+  .nav {
+    padding: 14px 18px;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    gap: 14px;
+    justify-content: flex-start;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+}
